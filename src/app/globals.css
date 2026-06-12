@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-serif: var(--font-playfair), Georgia, serif;
+
+  --color-navy-900: #08111a;
+  --color-navy-800: #0a141e;
+  --color-navy-700: #0d1a26;
+  --color-navy-600: #15293a;
+  --color-ivory: #f4efe5;
+  --color-ivory-50: #fbf8f1;
+  --color-brass-300: #cda35d;
+  --color-brass-400: #b3873f;
+  --color-brass-600: #9a7438;
+  --color-slate-400: #7c8590;
+  --color-slate-500: #46535f;
+  --color-slate-600: #5b6671;
+  --color-slate-700: #3a4856;
+}
+
+@keyframes heroUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes cueDrop {
+  0%, 100% { transform: translateY(0);   opacity: 0.5; }
+  50%       { transform: translateY(8px); opacity: 1;   }
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes glowBreathe {
+  0%, 100% { opacity: 0.55; }
+  50%       { opacity: 0.9;  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4efe5;
+}
+
+/* Results row responsive grid */
+.result-row {
+  display: grid;
+  grid-template-columns: 200px 1fr auto;
+  gap: 24px;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .result-row {
+    grid-template-columns: 1fr auto;
+    gap: 12px 20px;
+  }
+  .result-row > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Practice-area list item hover */
+.pa-item {
+  border-left: 3px solid transparent;
+  transition: border-left-color 0.25s, background 0.25s, padding-left 0.3s;
+}
+.pa-item:hover {
+  border-left-color: #b3873f;
+  background: rgba(179, 135, 63, 0.05);
+  padding-left: 28px;
+}
+.pa-item:hover .pa-arrow {
+  opacity: 1;
+}

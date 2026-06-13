@@ -1,10 +1,10 @@
 const PRACTICE_LINKS = [
-  'Personal Injury',
-  'Business & Corporate',
-  'Estate Planning',
-  'Family Law',
-  'Real Estate',
-  'Criminal Defense',
+  { label: 'Personal Injury',      href: '/practice-areas/personal-injury' },
+  { label: 'Business & Corporate', href: '/practice-areas/business-corporate' },
+  { label: 'Estate Planning',      href: '/practice-areas/estate-planning' },
+  { label: 'Family Law',           href: '/practice-areas/family-law' },
+  { label: 'Real Estate',          href: '/practice-areas/real-estate' },
+  { label: 'Criminal Defense',     href: '/practice-areas/criminal-defense' },
 ];
 
 const FIRM_LINKS = [
@@ -48,12 +48,12 @@ export default function SiteFooter() {
             <div className="font-bold text-slate-400 mb-5" style={{ fontSize: '11px', letterSpacing: '0.22em' }}>PRACTICE</div>
             {PRACTICE_LINKS.map((p) => (
               <a
-                key={p}
-                href="/practice-area"
+                key={p.label}
+                href={p.href}
                 className="block no-underline py-1.5 transition-colors duration-200 hover:text-brass-300"
                 style={{ color: 'rgba(244,239,229,0.62)', fontSize: '14.5px' }}
               >
-                {p}
+                {p.label}
               </a>
             ))}
           </div>

@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const NAV_LINKS = [
   { key: 'about',     label: 'The Firm',       href: '/about' },
-  { key: 'practice',  label: 'Practice Areas',  href: '/practice-area' },
+  { key: 'practice-areas', label: 'Practice Areas', href: '/practice-areas' },
   { key: 'attorneys', label: 'Attorneys',       href: '/attorneys' },
   { key: 'results',   label: 'Results',         href: '/results' },
   { key: 'insights',  label: 'Insights',        href: '/insights' },

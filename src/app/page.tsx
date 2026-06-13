@@ -15,12 +15,12 @@ const CREDENTIALS = [
 ];
 
 const PRACTICE_AREAS = [
-  { num: '01', name: 'Personal Injury',      sub: 'Catastrophic injury · Auto & truck · Medical malpractice · Wrongful death' },
-  { num: '02', name: 'Business & Corporate', sub: 'Formation · M&A · Contracts · Governance · Commercial litigation' },
-  { num: '03', name: 'Estate Planning',      sub: 'Wills · Trusts · Probate · Elder law · Asset protection' },
-  { num: '04', name: 'Family Law',           sub: 'Divorce · Custody · Complex marital estates · Handled with discretion' },
-  { num: '05', name: 'Real Estate',          sub: 'Residential & commercial transactions · Land use · Development' },
-  { num: '06', name: 'Criminal Defense',     sub: 'State & federal · Protects your record, your freedom, your future' },
+  { num: '01', name: 'Personal Injury',      href: '/practice-areas/personal-injury',   sub: 'Catastrophic injury · Auto & truck · Medical malpractice · Wrongful death' },
+  { num: '02', name: 'Business & Corporate', href: '/practice-areas/business-corporate', sub: 'Formation · M&A · Contracts · Governance · Commercial litigation' },
+  { num: '03', name: 'Estate Planning',      href: '/practice-areas/estate-planning',   sub: 'Wills · Trusts · Probate · Elder law · Asset protection' },
+  { num: '04', name: 'Family Law',           href: '/practice-areas/family-law',        sub: 'Divorce · Custody · Complex marital estates · Handled with discretion' },
+  { num: '05', name: 'Real Estate',          href: '/practice-areas/real-estate',       sub: 'Residential & commercial transactions · Land use · Development' },
+  { num: '06', name: 'Criminal Defense',     href: '/practice-areas/criminal-defense',  sub: 'State & federal · Protects your record, your freedom, your future' },
 ];
 
 const ATTORNEYS = [
@@ -147,7 +147,7 @@ export default function HomePage() {
               Request a Free Consultation
             </a>
             <a
-              href="/practice-area"
+              href="/practice-areas"
               className="inline-flex items-center gap-2.5 no-underline font-semibold transition-all duration-200 hover:border-[rgba(205,163,93,0.7)]"
               style={{
                 background: 'transparent',
@@ -297,7 +297,7 @@ export default function HomePage() {
             {PRACTICE_AREAS.map((pa, i) => (
               <a
                 key={pa.num}
-                href="/practice-area"
+                href={pa.href}
                 className="pa-item flex items-center no-underline text-ivory pl-4 pr-4"
                 style={{
                   gap: 'clamp(16px,3vw,40px)',

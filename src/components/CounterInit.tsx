@@ -1,5 +1,6 @@
 'use client';
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 function animateCounter(el: HTMLElement) {
   const target = parseFloat(el.dataset.target ?? '0');
@@ -28,6 +29,8 @@ function animateCounter(el: HTMLElement) {
 }
 
 export default function CounterInit() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -43,7 +46,7 @@ export default function CounterInit() {
 
     document.querySelectorAll('[data-counter]').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }
